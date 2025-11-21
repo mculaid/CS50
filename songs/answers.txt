@@ -1,0 +1,22 @@
+sqlite> SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs;
++-------------+--------------+-------------------+
+| AVG(energy) | AVG(valence) | AVG(danceability) |
++-------------+--------------+-------------------+
+| 0.65906     | 0.484443     | 0.71646           |
+
+The listener is above average energy,
+has a average valence and high danceability.
+They are on the move a lot and energetic.
+
+They could be purple, yellow or maybe even orange.
+There is no valid conclusion in sight.
+It is unknown what the user felt when they listened to each individual song.
+It is unclear, why each song has been added to the playlist. They may be a one-off,
+they could have been recommended, it could have been something they opened randomly
+and enjoyed in that particular moment of that time of the day.
+
+The aura could possibly be calculated better by taking
+into account these factors:
+- most listened to / most repeated / most rewinded songs
+- if the user's energy level was known at the time of playback
+- if the user could track their mood (i. e. selectable emoji depicting after a song has concluded)

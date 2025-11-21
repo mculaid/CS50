@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5 text-center">
+
+        <form action="/start" method="post" class="mb-3">
+            <button class="btn btn-primary" type="submit">Start Pomodoro</button>
+        </form>
+
+        <form action="/stop" method="post" class="mb-4">
+            <button class="btn btn-secondary" type="submit">Stop</button>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">ID</th>
+                    <th class="text-end">StartTime</th>
+                    <th class="text-end">EndTime</th>
+                    <th class="text-end">TimeSpent</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                    <tr>
+                        <td class="text-start">{{ row.id }}</td>
+                        <td class="text-end">{{ row.timestart }}</td>
+                        <td class="text-end">{{ row.timeend }}</td>
+                        <td class="text-end">{{ row.timespent }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                    <td class="border-0 text-end">{{ total }}</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </main>
+    
+{% endblock %}

@@ -1,0 +1,27 @@
+# html
+<h1>
+<h2>
+<div>
+<a>
+<ul>
+<li>
+<img>
+<b>
+<form>
+<label>
+<select>
+<p>
+
+# css
+background-color
+width
+padding
+text-align
+font-family
+font-size
+
+# bootstrap
+From bootstrap I implemented a spinner from https://getbootstrap.com/docs/5.2/components/spinners/
+
+# javascript
+Javascript is used to draw a user-selected amount on the screen

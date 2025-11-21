@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // buttons
+                for (let i = 0; i < document.querySelectorAll('button').length; i++) {
+                    document.querySelectorAll('button')[i].addEventListener('click', function(event) {
+                        const reply_button = document.getElementById('reply_button');
+                        const button_color = document.querySelectorAll('button')[i];
+                        if (event.target.textContent === 'Zombieland') {
+                            reply_button.innerText = 'Correct!';
+                            button_color.style.backgroundColor = 'green';
+                        } else {
+                            reply_button.innerText = 'Incorrect';
+                            button_color.style.backgroundColor = 'red';
+                        }
+                    });
+                }
+
+                // reply
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    const illegal = document.getElementById('illegal');
+                    const reply = document.getElementById('reply');
+                    if (illegal.value.toLowerCase() === 'switzerland') {
+                        illegal.style.backgroundColor = 'green';
+                        reply.innerText = 'Correct!';
+                    } else {
+                        illegal.style.backgroundColor = 'red';
+                        reply.innerText = 'Incorrect';
+                    }
+                    event.preventDefault();
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    Which movie did Emma Stone star in?
+                </h3>
+                <p id="reply_button"></p>
+                <button type="button">Lord of the Rings</button>
+                <button type="button">Star Wars Episode 1: The Phantom Menace</button>
+                <button type="button">Zombieland</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    In which country is it illegal to own only one guinea pig,
+                    as a lone guinea pig might get lonely?
+                </h3>
+                <!-- <form onsubmit="check_answer(String name); return false;"> -->
+                <form>
+                    <input name="q" type="text" autocomplete="off" id="illegal">
+                    <input type="submit" value="Check Answer">
+                </form>
+                <p id="reply"></p>
+            </div>
+        </div>
+
+    </body>
+
+</html>
